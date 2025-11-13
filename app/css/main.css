@@ -1,3 +1,18 @@
 body {
   font-family: "Courier New", Courier, monospace;
 }
+
+#box {
+  width: 5rem;
+  height: 2rem;
+  max-height: 2rem;
+  background-color: grey;
+}
+
+#box.active {
+  max-height: 2rem;
+}
+
+.hidden {
+  display: none;
+}

@@ -30,7 +30,6 @@ const events = [
         youtube: "https://www.youtube.com/@EpicGamesStore",
         website: "https://www.epicgames.com/site/en-US/home",
       },
-
       image: "images/next-gen.png",
     },
     from: "1787734800000",
