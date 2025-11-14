@@ -1,18 +1,18 @@
 const navItems = [
   {
     name: "Events",
-    link: "index.html", //link naar resource
+    link: "index.html",
     type: "internal",
   },
   {
     name: "Official website",
-    link: "https://www.gamescom.global/en", //link naar resource
-    type: "external", // target blank bij external!
+    link: "https://www.gamescom.global/en",
+    type: "external",
   },
   {
     name: "Graduaat Programmeren",
-    link: "https://www.arteveldehogeschool.be/opleidingen/graduaat/programmeren", //link naar resource
-    type: "external", // target blank bij external!
+    link: "https://www.arteveldehogeschool.be/opleidingen/graduaat/programmeren",
+    type: "external",
   },
 ];
 
@@ -21,7 +21,7 @@ const events = [
     id: "885df49e-0f3e-4b53-8ee2-b07bf7dc2433",
     stage: "Innovation Stage",
     event: {
-      name: "Next-gen Game Engines",
+      name: "Next-Gen Game Engines",
       description:
         "Join Tim Sweeney, CEO of Epic Games, as he explores the cutting-edge advancements in game engine technology. This session will cover the latest innovations in Unity’s development tools and their potential impact on the gaming industry. Attendees will gain insights into how these new technologies can enhance game development, improve performance, and enable more immersive and interactive experiences for players. Sweeney will also discuss upcoming features and tools designed to empower developers in creating next-generation games.",
       socials: {
@@ -63,7 +63,7 @@ const events = [
       socials: {
         instagram: "https://www.instagram.com/hidetaka.miyazaki_/",
         twitter: "https://x.com/MiyazakiTweets",
-        website: "https://en.wikipedia.org/wiki/Hidetaka_Miyazaki", //????????
+        website: "https://en.wikipedia.org/wiki/Hidetaka_Miyazaki",
       },
       image: "images/future-gaming.jpg",
     },
@@ -133,7 +133,7 @@ const events = [
       socials: {
         instagram: "https://www.instagram.com/amy_hennig/",
         twitter: "https://x.com/amy_hennig",
-        website: "https://en.wikipedia.org/wiki/Amy_Hennig", //??????
+        website: "https://en.wikipedia.org/wiki/Amy_Hennig",
       },
       image: "images/storytelling.jpg",
     },

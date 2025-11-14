@@ -1,5 +1,3 @@
-//link github repo in comments indienen plaatsen
-
 (() => {
   const $nav = document.getElementById("nav");
 
@@ -41,7 +39,19 @@
 })();
 
 (() => {
+  const $nextYear = document.getElementById("nextYear");
+
+  function getHtmlForText() {
+    let html = "";
+    html += `<p>till next edition</p>`;
+    return html;
+  }
+  $nextYear.innerHTML = getHtmlForText();
+})();
+
+(() => {
   const $gameBlocks = document.getElementById("gameBlocks");
+  const $body = document.body;
 
   function getHtmlForGames(events) {
     let html = "";
@@ -74,20 +84,45 @@
   }
   $gameBlocks.innerHTML = getHtmlForGames(events);
 
-  const $blocks = document.querySelectorAll(".game-block");
+  const infoPanel = document.createElement("div");
+  infoPanel.classList.add("info-panel");
+  infoPanel.innerHTML = `
+<button class="close-btn">x</button>
+<div class="info-content"></div>
+`;
+  $body.appendChild(infoPanel);
 
-  $blocks.forEach(($block) => {
-    const $img = $block.querySelector("img");
-    const $info = $block.querySelector(".info");
+  const modal = document.createElement("div");
+  modal.classList.add("modal");
+  $body.appendChild(modal);
 
+  const $infoContent = infoPanel.querySelector(".info-content");
+  const $closeBtn = infoPanel.querySelector(".close-btn");
+
+  document.querySelectorAll(".game-block img").forEach(($img, i) => {
     $img.addEventListener("click", () => {
-      const isHidden = $info.classList.contains("hidden");
+      const event = events[i];
+      $infoContent.innerHTML = `
+      <img src="${event.event.image}" alt="${event.event.name}"/>
 
-      if (isHidden) {
-        $info.classList.remove("hidden");
-      } else {
-        $info.classList.add("hidden");
-      }
+      <div class="text">
+        <h3>${event.stage} | ${new Date(
+        parseInt(event.from)
+      ).toLocaleString()}</h3>
+        <h2>${event.event.name}</h2>
+        <p>${event.event.description}</p>
+      </div>
+      `;
+      infoPanel.classList.add("active");
+      modal.classList.add("active");
     });
   });
+
+  $closeBtn.addEventListener("click", closePanel);
+  modal.addEventListener("click", closePanel);
+
+  function closePanel() {
+    infoPanel.classList.remove("active");
+    modal.classList.remove("active");
+  }
 })();
